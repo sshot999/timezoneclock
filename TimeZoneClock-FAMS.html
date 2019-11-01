@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+ 
+
+<head>
+
+<meta http-equiv="Content-Language" content="en-us" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Time Zone Clock</title>
+
+<script src="https://momentjs.com/downloads/moment.js"></script>
+
+<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+
+ 
+
+<script>
+
+function startTime() {
+
+                document.getElementById("tz1").innerHTML = moment().tz("US/Hawaii").format("HH:mm:ss");
+
+                document.getElementById("tz2").innerHTML = moment().tz("US/Pacific").format("HH:mm:ss");
+
+                document.getElementById("tz3").innerHTML = moment().tz("US/Eastern").format("HH:mm:ss");
+
+                document.getElementById("tz4").innerHTML = moment().tz("Europe/London").format("HH:mm:ss");
+
+                document.getElementById("tz5").innerHTML = moment().tz("Africa/Lagos").format("HH:mm:ss");
+
+                document.getElementById("tz6").innerHTML = moment().tz("Asia/Kolkata").format("HH:mm:ss");
+
+                var t = setTimeout(function(){startTime()},500);
+
+}
+
+</script>
+
+ 
+
+<style type="text/css">
+
+td {
+
+                text-align: center;
+
+                width: 320px;
+
+                height: 50px;
+
+                margin: 0px;
+
+                padding: 0px;
+
+}
+
+ 
+
+td {
+
+                margin: 0px;
+
+                padding: 0px;
+
+}
+
+ 
+
+td.eastern {
+
+                color: #FFFF00;
+
+}
+
+ 
+
+body {
+
+                margin: 0px;
+
+                padding: 0px;
+
+                background-color: #000000;
+
+                color: #FF0000;
+
+                font-weight: bold;
+
+                font-size: 50px
+
+}
+
+</style>
+
+ 
+
+</head>
+
+ 
+
+<body onload="startTime()">
+
+ 
+
+<table style="width: 100%">
+
+                <tr>
+
+                                <td id="tz1"></td>
+
+                                <td id="tz2"></td>
+
+                                <td class="eastern" id="tz3"></td>
+
+                                <td id="tz4"></td>
+
+                                <td id="tz5"></td>
+
+                                <td id="tz6"></td>
+
+                </tr>
+
+                <tr>
+
+                                <td>HONOLULU</td>
+
+                                <td>PACIFIC</td>
+
+                                <td class="eastern">EASTERN</td>
+
+                                <td>LONDON</td>
+
+                                <td>LAGOS</td>
+
+                                <td>MUMBAI</td>
+
+                </tr>
+
+</table>
+
+ 
+
+</body>
+
+ 
+
+</html>
